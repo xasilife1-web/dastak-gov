@@ -27,7 +27,7 @@ export default function AdminPanel() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (password === 'admin123') {
+    if (password === 'Waseemadmin1515') {
       setIsAuthenticated(true);
       localStorage.setItem('adminAuth', 'true');
       loadSettings();
@@ -51,19 +51,19 @@ export default function AdminPanel() {
 
   if (!isAuthenticated) {
     return (
-      <main className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center p-4">
-        <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full">
-          <div className="text-center mb-8">
-            <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-3xl text-white">🔐</span>
+      <main className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center p-3 sm:p-6">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 max-w-md w-full">
+          <div className="text-center mb-6 sm:mb-8">
+            <div className="bg-green-600 w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+              <span className="text-2xl sm:text-3xl text-white">🔐</span>
             </div>
-            <h1 className="text-3xl font-bold text-gray-900">Admin Panel</h1>
-            <p className="text-gray-600 mt-2">Enter password to continue</p>
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Admin Panel</h1>
+            <p className="text-gray-600 mt-2 text-sm sm:text-base">Enter password to continue</p>
           </div>
 
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={handleLogin} className="space-y-4 sm:space-y-6">
             <div>
-              <label className="block text-gray-700 font-semibold mb-2">
+              <label className="block text-gray-700 font-semibold mb-2 text-sm sm:text-base">
                 Password
               </label>
               <input
@@ -71,31 +71,26 @@ export default function AdminPanel() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter admin password"
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm sm:text-base"
                 required
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-full text-lg font-bold transition shadow-lg"
+              className="w-full bg-green-600 hover:bg-green-700 text-white py-2.5 sm:py-3 rounded-full text-base sm:text-lg font-bold transition shadow-lg transform hover:scale-105 active:scale-95"
             >
               Login
             </button>
           </form>
 
-          <div className="mt-6 text-center">
+          <div className="mt-4 sm:mt-6 text-center">
             <button
               onClick={() => router.push('/')}
-              className="text-gray-500 hover:text-gray-700 text-sm"
+              className="text-gray-500 hover:text-gray-700 text-xs sm:text-sm"
             >
               ← Back to Home
             </button>
-          </div>
-
-          <div className="mt-8 p-4 bg-green-50 rounded-xl text-sm text-gray-600">
-            <p className="font-semibold mb-1">Default Password:</p>
-            <p className="font-mono bg-white px-3 py-2 rounded border">admin123</p>
           </div>
         </div>
       </main>
@@ -103,29 +98,30 @@ export default function AdminPanel() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 py-10 px-4">
+    <main className="min-h-screen bg-gradient-to-br from-green-50 to-green-100 py-6 sm:py-10 px-3 sm:px-6">
       <div className="max-w-3xl mx-auto">
         
         {/* Header */}
-        <div className="bg-white rounded-3xl shadow-xl p-8 mb-6">
-          <div className="flex justify-between items-center mb-6">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-5 sm:p-8 mb-4 sm:mb-6">
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4 sm:mb-6">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Admin Panel</h1>
-              <p className="text-gray-600 mt-1">Manage JazzCash Account Settings</p>
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Admin Panel</h1>
+              <p className="text-gray-600 mt-1 text-xs sm:text-base">Manage JazzCash Account Settings</p>
             </div>
             <button
               onClick={handleLogout}
-              className="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full font-semibold transition"
+              className="bg-red-500 hover:bg-red-600 text-white px-4 sm:px-6 py-2 rounded-full font-semibold transition text-sm sm:text-base"
             >
               Logout
             </button>
           </div>
 
           {/* Settings Form */}
-          <div className="space-y-6">
+          <div className="space-y-4 sm:space-y-6">
             
+            {/* Account Name */}
             <div>
-              <label className="block text-gray-700 font-semibold mb-2">
+              <label className="block text-gray-700 font-semibold mb-2 text-sm sm:text-base">
                 Account Name
               </label>
               <input
@@ -133,12 +129,13 @@ export default function AdminPanel() {
                 value={accountName}
                 onChange={(e) => setAccountName(e.target.value)}
                 placeholder="e.g. Jazzcash – SHAMEEM"
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm sm:text-base"
               />
             </div>
 
+            {/* Account Number */}
             <div>
-              <label className="block text-gray-700 font-semibold mb-2">
+              <label className="block text-gray-700 font-semibold mb-2 text-sm sm:text-base">
                 JazzCash Number
               </label>
               <input
@@ -146,27 +143,29 @@ export default function AdminPanel() {
                 value={accountNumber}
                 onChange={(e) => setAccountNumber(e.target.value)}
                 placeholder="e.g. 03259125102"
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-gray-300 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm sm:text-base"
                 maxLength="11"
               />
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-xs sm:text-sm text-gray-500 mt-1">
                 Format: 03XXXXXXXXX (11 digits)
               </p>
             </div>
 
-            <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-6">
-              <p className="text-sm text-gray-600 mb-3 font-semibold">Preview:</p>
+            {/* Preview */}
+            <div className="bg-green-50 border-2 border-green-200 rounded-xl sm:rounded-2xl p-4 sm:p-6">
+              <p className="text-xs sm:text-sm text-gray-600 mb-3 font-semibold">Preview:</p>
               <div className="text-center">
-                <p className="text-gray-700 font-semibold">{accountName || 'Account Name'}</p>
-                <p className="text-3xl font-bold text-green-600 mt-2">
+                <p className="text-gray-700 font-semibold text-sm sm:text-base">{accountName || 'Account Name'}</p>
+                <p className="text-2xl sm:text-3xl font-bold text-green-600 mt-2">
                   {accountNumber || '03XXXXXXXXX'}
                 </p>
               </div>
             </div>
 
+            {/* Save Button */}
             <button
               onClick={handleSave}
-              className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-full text-lg font-bold transition shadow-lg hover:shadow-xl"
+              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold transition shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
             >
               {saved ? '✓ Saved Successfully!' : 'Save Changes'}
             </button>
@@ -174,9 +173,10 @@ export default function AdminPanel() {
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg p-6">
-          <h3 className="text-xl font-bold text-gray-900 mb-4">📝 Instructions</h3>
-          <ul className="space-y-3 text-gray-700">
+        {/* Instructions */}
+        <div className="bg-white rounded-xl sm:rounded-2xl shadow-lg p-4 sm:p-6">
+          <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">📝 Instructions</h3>
+          <ul className="space-y-2 sm:space-y-3 text-gray-700 text-sm sm:text-base">
             <li className="flex items-start">
               <span className="text-green-600 font-bold mr-2">1.</span>
               <span>Enter the new JazzCash account name and number</span>
@@ -196,10 +196,11 @@ export default function AdminPanel() {
           </ul>
         </div>
 
-        <div className="text-center mt-6">
+        {/* Back to Home */}
+        <div className="text-center mt-4 sm:mt-6">
           <button
             onClick={() => router.push('/')}
-            className="text-gray-500 hover:text-gray-700 font-semibold"
+            className="text-gray-500 hover:text-gray-700 font-semibold text-sm sm:text-base"
           >
             ← Back to Home
           </button>

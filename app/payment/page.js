@@ -74,7 +74,7 @@ function PaymentContent() {
           <p className="text-gray-700 text-xs sm:text-sm mb-1" dir="rtl">
             ٹوکن کینسل ہونے کا وقت
           </p>
-          <div className="text-3xl sm:text-4xl font-bold text-pink-600">
+          <div className="text-3xl sm:text-4xl font-bold text-pink-600 bg-white rounded-lg py-2 shadow-inner">
             {formatTime(timeLeft)}
           </div>
         </div>
@@ -90,8 +90,8 @@ function PaymentContent() {
           {/* Bank Details */}
           <div className="bg-pink-50 rounded-xl sm:rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
             <div className="text-center mb-2">
-              <p className="text-gray-700 font-semibold text-sm sm:text-base">{accountName}</p>
-              <p className="text-2xl sm:text-3xl font-bold text-pink-600">{accountNumber}</p>
+              <p className="text-gray-700 font-semibold text-sm sm:text-base break-words">{accountName}</p>
+              <p className="text-2xl sm:text-3xl font-bold text-pink-600 break-all">{accountNumber}</p>
             </div>
             <p className="text-xs sm:text-sm text-gray-600 text-center" dir="rtl">
               اکاؤنٹ نمبر کاپی کریں
