@@ -14,7 +14,9 @@ function PaymentContent() {
   const [screenshot, setScreenshot] = useState(null);
   const [accountName, setAccountName] = useState('Jazzcash – SHAMEEM');
   const [accountNumber, setAccountNumber] = useState('03259125102');
+  const [loading, setLoading] = useState(false); // Loader state
 
+  // Load account details from localStorage
   useEffect(() => {
     const name = localStorage.getItem('jazzcashName') || 'Jazzcash – SHAMEEM';
     const number = localStorage.getItem('jazzcashNumber') || '03259125102';
@@ -22,6 +24,7 @@ function PaymentContent() {
     setAccountNumber(number);
   }, []);
 
+  // Countdown timer
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
@@ -44,29 +47,49 @@ function PaymentContent() {
 
   const handleFileChange = (e) => {
     const file = e.target.files?.[0];
-    if (file) {
-      setScreenshot(file);
-    }
+    if (file) setScreenshot(file);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
+    // Input validation
     if (!tidNumber) {
       alert("براہ کرم TID نمبر درج کریں");
       return;
     }
-    
+
     if (!screenshot) {
       alert("براہ کرم اسکرین شاٹ اپلوڈ کریں");
       return;
     }
 
-    router.push('/success');
+    // Show loader
+    setLoading(true);
+
+    try {
+      // Simulate payment validation (replace with your API if needed)
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      // Redirect to success page
+      router.push('/success');
+    } catch (error) {
+      setLoading(false);
+      alert("Payment validation failed. Please try again.");
+    }
   };
 
   return (
-    <main className="min-h-screen bg-gray-50 py-4 sm:py-8 px-3 sm:px-6">
+    <main className="min-h-screen bg-gray-50 py-4 sm:py-8 px-3 sm:px-6 relative">
+      {/* Loader Overlay */}
+      {loading && (
+        <div className="fixed inset-0 flex items-center justify-center bg-white/80 z-50">
+          <div className="text-green-600 text-xl sm:text-2xl font-bold">
+            Processing Payment...
+          </div>
+        </div>
+      )}
+
       <div className="max-w-2xl mx-auto">
 
         {/* Timer Alert */}
@@ -123,18 +146,23 @@ function PaymentContent() {
           </div>
 
           {/* TID Input */}
-          <div className="mb-3 sm:mb-4">
-            <label className="block text-gray-700 font-semibold mb-2 text-sm sm:text-base" dir="rtl">
-              TID (ٹرانزیکشن آئی ڈی):
-            </label>
-            <input
-              type="text"
-              value={tidNumber}
-              onChange={(e) => setTidNumber(e.target.value)}
-              placeholder="e.g. 1234567890"
-              className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-green-400 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm sm:text-base"
-            />
-          </div>
+<div className="mb-3 sm:mb-4">
+  <label className="block text-gray-700 font-semibold mb-2 text-sm sm:text-base" dir="rtl">
+    TID (ٹرانزیکشن آئی ڈی):
+  </label>
+  <input
+    type="text"
+    value={tidNumber}
+    onChange={(e) => {
+      // صرف numeric اور زیادہ سے زیادہ 12 digits
+      const value = e.target.value.replace(/\D/g, '').slice(0, 12);
+      setTidNumber(value);
+    }}
+    placeholder="e.g. 123456789012"
+    className="w-full px-3 sm:px-4 py-2 sm:py-3 border-2 border-green-400 rounded-lg sm:rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm sm:text-base"
+  />
+</div>
+
 
           {/* Screenshot Upload */}
           <div className="mb-4 sm:mb-6">
@@ -177,10 +205,3 @@ function PaymentContent() {
   );
 }
 
-export default function PaymentPage() {
-  return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-      <PaymentContent />
-    </Suspense>
-  );
-}

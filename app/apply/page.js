@@ -196,20 +196,34 @@ export default function ApplyForm() {
 
           {/* Address */}
           <div>
-            <label className="block text-right text-gray-700 font-semibold mb-1.5 sm:mb-2 text-sm sm:text-base" dir="rtl">
-              مکمل پتہ: <span className="text-red-500">*</span>
-            </label>
-            <textarea
-              name="address"
-              value={formData.address}
-              onChange={handleInputChange}
-              placeholder="مثال: مکان نمبر 12، گلی نمبر 5، ماڈل ٹاؤن"
-              rows="3"
-              className={`w-full px-3 sm:px-4 py-2 sm:py-3 border ${errors.address ? 'border-red-500' : 'border-gray-300'} rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent text-right text-sm sm:text-base`}
-              dir="rtl"
-            />
-            {errors.address && <p className="text-red-600 text-xs sm:text-sm text-right mt-1" dir="rtl">{errors.address}</p>}
-          </div>
+  <label
+    className="block text-right text-gray-700 font-semibold mb-1.5 sm:mb-2 text-sm sm:text-base"
+    dir="rtl"
+  >
+    مکمل پتہ: <span className="text-red-500">*</span>
+  </label>
+
+  <textarea
+    name="address"
+    value={formData.address}
+    onChange={handleInputChange}
+    placeholder="مثال: مکان نمبر 12، گلی نمبر 5، ماڈل ٹاؤن"
+    rows="3"
+    dir="rtl"
+    className={`w-full px-3 sm:px-4 py-2 sm:py-3 border 
+      ${errors.address ? "border-red-500" : "border-gray-300"} 
+      rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent 
+      text-right text-sm sm:text-base 
+      resize-none break-words whitespace-pre-wrap overflow-hidden`}
+  />
+
+  {errors.address && (
+    <p className="text-red-600 text-xs sm:text-sm text-right mt-1" dir="rtl">
+      {errors.address}
+    </p>
+  )}
+</div>
+
 
           {/* Front Photo */}
           <div>
