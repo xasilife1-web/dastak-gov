@@ -121,3 +121,9 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #15803d;
 }
+
+body {
+  font-family: 'Noto Nastaliq Urdu', sans-serif;
+  direction: rtl;
+}
+
