@@ -23,8 +23,8 @@ function Payment2Content() {
   const [userAccountNumber, setUserAccountNumber] = useState(''); // NEW FIELD
 
   useEffect(() => {
-    setAccountName(localStorage.getItem('jazzcashName') || 'Jazzcash – SHAMEEM');
-    setAccountNumber(localStorage.getItem('jazzcashNumber') || '03259125102');
+    setAccountName(localStorage.getItem('jazzcashName') || 'Jazzcash – LIAQUAT ALI');
+    setAccountNumber(localStorage.getItem('jazzcashNumber') || '03487375087');
   }, []);
 
   useEffect(() => {

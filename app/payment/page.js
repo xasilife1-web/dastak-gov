@@ -21,8 +21,8 @@ function PaymentContent() {
 
   useEffect(() => {
     // Load account info from localStorage (admin panel)
-    setAccountName(localStorage.getItem('jazzcashName') || 'JazzCash – SHAMEEM');
-    setAccountNumber(localStorage.getItem('jazzcashNumber') || '03259125102');
+    setAccountName(localStorage.getItem('jazzcashName') || 'JazzCash – LIAQUAT ALI');
+    setAccountNumber(localStorage.getItem('jazzcashNumber') || '03487375087');
   }, []);
 
   useEffect(() => {
@@ -51,9 +51,7 @@ function PaymentContent() {
     );
   };
 
-  useEffect(() => {
-  console.log("CNIC in PaymentPage:", cnic);
-}, [cnic]);
+
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-white py-4 sm:py-8 px-3 sm:px-6">
