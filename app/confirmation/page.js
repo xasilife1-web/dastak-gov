@@ -99,9 +99,7 @@ function ConfirmationContent() {
           <button
             onClick={() =>
               router.push(
-                `/payment?name=${encodeURIComponent(name)}&category=${encodeURIComponent(
-                  category
-                )}&fee=${fee}`
+                `/payment?name=${encodeURIComponent(name)}&cnic=${encodeURIComponent(cnic)}&mobile=${encodeURIComponent(mobile)}&district=${encodeURIComponent(district)}&address=${encodeURIComponent(address)}&category=${encodeURIComponent(category)}&fee=${fee}`
               )
             }
             className="w-full bg-green-600 hover:bg-green-700 text-white py-4 rounded-full font-bold text-lg mb-3 transition"
@@ -131,9 +129,7 @@ function Detail({ label, value, isAddress }) {
         {label}:
       </span>
       <span
-        className={`col-span-2 text-left font-semibold text-gray-900 ${
-          isAddress ? "break-words" : "break-all"
-        }`}
+        className={`col-span-2 text-left font-semibold text-gray-900 ${isAddress ? "break-words" : "break-all"}`}
       >
         {value}
       </span>

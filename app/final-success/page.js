@@ -63,12 +63,18 @@ function FinalSuccessContent() {
             </div>
 
             <div className="border rounded-xl p-4 text-sm text-gray-800 leading-relaxed" dir="rtl">
-              معزز <span className="font-bold">{name}</span>،
-              <br />
-              نیچے WhatsApp بٹن پر کلک کر کے
-              <span className="font-bold text-green-600"> {amount} روپے </span>
-              ابھی حاصل کریں۔
-            </div>
+  معزز <span className="font-bold">{name}</span>،  
+  <br /><br />
+  السلام علیکم،  
+  <br /><br />
+  میں نے ڈرائیونگ لائسنس کے لیے درخواست جمع کروائی ہے اور اس کی متعلقہ ادائیگی بھی مکمل کر دی ہے۔  
+  براہِ مہربانی میری ادائیگی کی تصدیق کرنے کے بعد مجھے آگاہ فرما دیں کہ میرا لائسنس کب تک تیار ہو جائے گا۔  
+  <br /><br />
+  شکریہ  
+  <br /><br />
+  <span className="font-bold text-green-600">{amount} روپے</span> کی ادائیگی بھی مکمل کر دی گئی ہے۔
+</div>
+
 
             <button
               onClick={handleWhatsAppRedirect}

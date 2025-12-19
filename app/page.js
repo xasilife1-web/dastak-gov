@@ -14,7 +14,7 @@ export default function Home() {
           <section className="order-1 text-center lg:text-left space-y-6">
             
             {/* DLIMS Logo */}
-            <div className="flex justify-center lg:justify-start">
+            <div className="flex justify-center lg:justify-center">
               <Image
                 src="/dlims-logo.png"
                 alt="DLIMS"
@@ -26,13 +26,13 @@ export default function Home() {
               />
             </div>
 
-            {/* Government License Related Line (NEW) */}
+            {/* Government License Related Line */}
             <p className="text-sm sm:text-base text-gray-700 font-medium">
               Official Government Driving License Portal – Punjab
             </p>
 
-            {/* CM Punjab & Government Punjab Logos (NEW POSITION) */}
-            <div className="flex items-center justify-center lg:justify-start gap-4 pt-2">
+            {/* CM Punjab & Government Punjab Logos (CENTERED) */}
+            <div className="flex items-center justify-center gap-4 pt-2">
               <div className="bg-white p-2 rounded-full shadow-md">
                 <Image
                   src="/govt-logo.png"
