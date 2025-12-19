@@ -33,23 +33,23 @@ export default function Home() {
 
             {/* CM Punjab & Government Punjab Logos (CENTERED) */}
             <div className="flex items-center justify-center gap-4 pt-2">
-              <div className="bg-white p-2 rounded-full shadow-md">
+              <div className="bg-white p-2 rounded-full shadow-md overflow-hidden flex items-center justify-center">
                 <Image
                   src="/govt-logo.png"
                   alt="Government of Punjab"
                   width={80}
                   height={80}
-                  className="w-14 sm:w-16"
+                  className="w-14 sm:w-16 object-contain"
                   quality={100}
                 />
               </div>
-              <div className="bg-white p-2 rounded-full shadow-md">
+              <div className="bg-white p-2 rounded-full shadow-md overflow-hidden flex items-center justify-center">
                 <Image
                   src="/maryam.png"
                   alt="Chief Minister Punjab"
                   width={80}
                   height={80}
-                  className="w-14 sm:w-16"
+                  className="w-14 sm:w-16 object-cover"
                   quality={100}
                 />
               </div>
@@ -61,32 +61,32 @@ export default function Home() {
             </h1>
 
             {/* Urdu Description */}
-            <div className="bg-green-50 rounded-2xl p-5 sm:p-6 shadow-sm border border-green-100">
-              <p className="text-lg sm:text-xl lg:text-2xl text-gray-800 leading-relaxed font-medium" dir="rtl">
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-5 sm:p-6 lg:p-7 shadow-md border-2 border-green-200 hover:shadow-lg transition-shadow duration-300">
+              <p className="text-lg sm:text-xl lg:text-2xl text-gray-800 leading-relaxed font-semibold" dir="rtl">
                 گھر بیٹھے ڈرائیونگ لائسنس اپلائی کریں، بس فارم فل کریں اور باقی کام ہمارا نمائندہ کرے گا۔
               </p>
             </div>
 
             {/* Apply Button */}
             <Link href="/apply" className="block">
-              <button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-8 py-5 sm:py-6 rounded-full text-lg sm:text-xl lg:text-2xl font-bold shadow-2xl hover:shadow-green-500/50 transform hover:scale-105 active:scale-95 transition-all duration-300">
+              <button className="w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-8 py-5 sm:py-6 rounded-full text-lg sm:text-xl lg:text-2xl font-bold shadow-2xl hover:shadow-green-500/50 transform hover:scale-[1.02] active:scale-95 transition-all duration-300 ring-4 ring-green-200 hover:ring-green-300">
                 Apply Driving License Now
               </button>
             </Link>
 
             {/* Quick Info */}
-            <div className="grid grid-cols-3 gap-3 pt-4">
-              <div className="bg-white rounded-xl p-3 shadow-md text-center">
-                <div className="text-2xl font-bold text-green-600">24/7</div>
-                <div className="text-xs text-gray-600" dir="rtl">دستیاب</div>
+            <div className="grid grid-cols-3 gap-3 sm:gap-4 pt-4">
+              <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md hover:shadow-xl transition-all duration-300 text-center border border-green-100 hover:border-green-300">
+                <div className="text-2xl sm:text-3xl font-bold text-green-600">24/7</div>
+                <div className="text-xs sm:text-sm text-gray-600 mt-1" dir="rtl">دستیاب</div>
               </div>
-              <div className="bg-white rounded-xl p-3 shadow-md text-center">
-                <div className="text-2xl font-bold text-green-600">Fast</div>
-                <div className="text-xs text-gray-600" dir="rtl">تیز</div>
+              <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md hover:shadow-xl transition-all duration-300 text-center border border-green-100 hover:border-green-300">
+                <div className="text-2xl sm:text-3xl font-bold text-green-600">Fast</div>
+                <div className="text-xs sm:text-sm text-gray-600 mt-1" dir="rtl">تیز</div>
               </div>
-              <div className="bg-white rounded-xl p-3 shadow-md text-center">
-                <div className="text-2xl font-bold text-green-600">Safe</div>
-                <div className="text-xs text-gray-600" dir="rtl">محفوظ</div>
+              <div className="bg-white rounded-xl p-3 sm:p-4 shadow-md hover:shadow-xl transition-all duration-300 text-center border border-green-100 hover:border-green-300">
+                <div className="text-2xl sm:text-3xl font-bold text-green-600">Safe</div>
+                <div className="text-xs sm:text-sm text-gray-600 mt-1" dir="rtl">محفوظ</div>
               </div>
             </div>
 
