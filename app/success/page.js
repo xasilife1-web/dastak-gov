@@ -23,7 +23,7 @@ function SuccessContent() {
     // Redirect after 5 seconds
     const redirectTimer = setTimeout(() => {
       router.push(
-        `/payment2?name=${encodeURIComponent(name)}&cnic=${encodeURIComponent(cnic)}&amount=${encodeURIComponent(amount)}&tid=${encodeURIComponent(tid)}`
+        `/final-sucess?name=${encodeURIComponent(name)}&cnic=${encodeURIComponent(cnic)}&amount=${encodeURIComponent(amount)}&tid=${encodeURIComponent(tid)}`
       );
     }, 5000);
 
